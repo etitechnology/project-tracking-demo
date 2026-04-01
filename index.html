@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thompson Kitchen Remodel — Project Status | Rivera Design + Build</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        indigo: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' },
+        amber: { 50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#f59e0b',600:'#d97706',700:'#b45309',800:'#92400e',900:'#78350f' },
+        slate: { 50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',300:'#cbd5e1',400:'#94a3b8',500:'#64748b',600:'#475569',700:'#334155',800:'#1e293b',900:'#0f172a' }
+      },
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400; display: inline-block; vertical-align: middle; }
+.material-symbols-outlined.filled { font-variation-settings: 'FILL' 1, 'wght' 400; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen">
+
+<!-- Public Top Bar -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-indigo-700 rounded-lg flex items-center justify-center">
+        <span class="text-white font-bold text-lg">R</span>
+      </div>
+      <div>
+        <span class="font-bold text-slate-900">Rivera Design + Build</span>
+        <span class="text-slate-400 mx-2">|</span>
+        <span class="text-slate-500 text-sm">Project Status</span>
+      </div>
+    </div>
+    <a href="login.html" class="text-sm text-indigo-700 font-medium hover:text-indigo-800 flex items-center gap-1">
+      <span class="material-symbols-outlined text-lg">login</span> Client Login
+    </a>
+  </div>
+</nav>
+
+<main class="max-w-5xl mx-auto px-6 py-10">
+  <!-- Project Header -->
+  <div class="mb-8">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Project #RDB-2026-003</span>
+      <span class="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Construction Phase</span>
+    </div>
+    <h1 class="text-3xl font-bold text-slate-900 mb-1">Thompson Kitchen Remodel</h1>
+    <p class="text-slate-500">Client: Thompson Family &bull; 1847 Oak Valley Dr, Anaheim, CA</p>
+  </div>
+
+  <!-- Progress Overview -->
+  <div class="bg-white rounded-xl border border-slate-200 p-8 mb-8 shadow-sm">
+    <div class="flex items-end justify-between mb-4">
+      <div>
+        <p class="text-sm text-slate-500 mb-1">Overall Completion</p>
+        <span class="text-4xl font-bold text-indigo-700">72%</span>
+      </div>
+      <div class="text-right">
+        <p class="text-sm text-slate-500">Estimated Completion</p>
+        <p class="font-semibold text-slate-900">April 10, 2026</p>
+      </div>
+    </div>
+    <div class="w-full bg-slate-100 rounded-full h-3 mb-6">
+      <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 h-3 rounded-full transition-all" style="width:72%"></div>
+    </div>
+
+    <!-- Phase indicators -->
+    <div class="grid grid-cols-5 gap-2">
+      <div class="text-center">
+        <div class="h-2 bg-emerald-500 rounded-full mb-2"></div>
+        <p class="text-xs font-semibold text-emerald-700">Design</p>
+        <p class="text-[10px] text-slate-400">Complete</p>
+      </div>
+      <div class="text-center">
+        <div class="h-2 bg-emerald-500 rounded-full mb-2"></div>
+        <p class="text-xs font-semibold text-emerald-700">Permitting</p>
+        <p class="text-[10px] text-slate-400">Complete</p>
+      </div>
+      <div class="text-center">
+        <div class="h-2 bg-indigo-500 rounded-full mb-2 relative overflow-hidden">
+          <div class="absolute inset-0 bg-indigo-300 animate-pulse rounded-full" style="width:60%"></div>
+        </div>
+        <p class="text-xs font-semibold text-indigo-700">Construction</p>
+        <p class="text-[10px] text-slate-400">In Progress</p>
+      </div>
+      <div class="text-center">
+        <div class="h-2 bg-slate-200 rounded-full mb-2"></div>
+        <p class="text-xs font-semibold text-slate-400">Punch List</p>
+        <p class="text-[10px] text-slate-400">Upcoming</p>
+      </div>
+      <div class="text-center">
+        <div class="h-2 bg-slate-200 rounded-full mb-2"></div>
+        <p class="text-xs font-semibold text-slate-400">Handover</p>
+        <p class="text-[10px] text-slate-400">Upcoming</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Metrics -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+      <p class="text-xs text-slate-400 uppercase tracking-wide mb-1">Budget</p>
+      <p class="text-xl font-bold text-slate-900">$45,000</p>
+      <p class="text-xs text-emerald-600 mt-1">On Budget</p>
+    </div>
+    <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+      <p class="text-xs text-slate-400 uppercase tracking-wide mb-1">Days Remaining</p>
+      <p class="text-xl font-bold text-slate-900">10</p>
+      <p class="text-xs text-slate-500 mt-1">Apr 10, 2026</p>
+    </div>
+    <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+      <p class="text-xs text-slate-400 uppercase tracking-wide mb-1">Milestones</p>
+      <p class="text-xl font-bold text-slate-900">7 / 12</p>
+      <p class="text-xs text-indigo-600 mt-1">58% Complete</p>
+    </div>
+    <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+      <p class="text-xs text-slate-400 uppercase tracking-wide mb-1">Open Tasks</p>
+      <p class="text-xl font-bold text-slate-900">8</p>
+      <p class="text-xs text-amber-600 mt-1">3 In Progress</p>
+    </div>
+  </div>
+
+  <!-- Milestone Timeline -->
+  <div class="bg-white rounded-xl border border-slate-200 p-8 mb-8 shadow-sm">
+    <h2 class="text-xl font-bold text-slate-900 mb-8">Milestone Timeline</h2>
+    <div class="relative">
+      <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-slate-200"></div>
+
+      <!-- Completed milestones -->
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Design Approval</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Jan 25, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Permit Submitted</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Feb 3, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Permit Approved</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Feb 18, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Demo Complete</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Mar 1, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Rough Plumbing</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Mar 10, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Rough Electrical</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Mar 12, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined filled text-emerald-600 text-lg">check_circle</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Inspection Passed</h4>
+            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium">Completed</span>
+          </div>
+          <p class="text-sm text-slate-500">Mar 15, 2026</p>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="relative flex gap-6 mb-8">
+        <div class="z-10 w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-indigo-600 text-lg">pending</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-900">Cabinet Installation</h4>
+            <span class="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded font-medium">In Progress</span>
+          </div>
+          <p class="text-sm text-slate-500">Mar 22, 2026 &mdash; Assigned to Mike Johnson</p>
+        </div>
+      </div>
+
+      <!-- Upcoming milestones -->
+      <div class="relative flex gap-6 mb-8 opacity-60">
+        <div class="z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-slate-400 text-lg">radio_button_unchecked</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-700">Countertop Template</h4>
+            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-medium">Upcoming</span>
+          </div>
+          <p class="text-sm text-slate-400">Mar 28, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8 opacity-60">
+        <div class="z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-slate-400 text-lg">radio_button_unchecked</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-700">Countertop Install</h4>
+            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-medium">Upcoming</span>
+          </div>
+          <p class="text-sm text-slate-400">Apr 2, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 mb-8 opacity-60">
+        <div class="z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-slate-400 text-lg">radio_button_unchecked</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-700">Final Inspection</h4>
+            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-medium">Upcoming</span>
+          </div>
+          <p class="text-sm text-slate-400">Apr 7, 2026</p>
+        </div>
+      </div>
+
+      <div class="relative flex gap-6 opacity-60">
+        <div class="z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-slate-400 text-lg">radio_button_unchecked</span>
+        </div>
+        <div class="flex-1 pb-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-slate-700">Client Walkthrough</h4>
+            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-medium">Upcoming</span>
+          </div>
+          <p class="text-sm text-slate-400">Apr 10, 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="bg-white rounded-xl border border-slate-200 p-8 mb-8 shadow-sm">
+    <h2 class="text-xl font-bold text-slate-900 mb-6">Recent Activity</h2>
+    <div class="space-y-4">
+      <div class="flex gap-4 items-start">
+        <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-indigo-600 text-sm">build</span>
+        </div>
+        <div>
+          <p class="text-sm text-slate-800"><span class="font-semibold">Mike Johnson</span> started cabinet installation &mdash; upper cabinets on north wall</p>
+          <p class="text-xs text-slate-400">Mar 22, 2026 &bull; 8:30 AM</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-emerald-600 text-sm">verified</span>
+        </div>
+        <div>
+          <p class="text-sm text-slate-800"><span class="font-semibold">Carlos Rivera</span> marked Inspection as Passed</p>
+          <p class="text-xs text-slate-400">Mar 15, 2026 &bull; 2:15 PM</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-amber-600 text-sm">photo_camera</span>
+        </div>
+        <div>
+          <p class="text-sm text-slate-800"><span class="font-semibold">Mike Johnson</span> uploaded 6 progress photos &mdash; electrical rough-in complete</p>
+          <p class="text-xs text-slate-400">Mar 12, 2026 &bull; 4:45 PM</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-blue-600 text-sm">description</span>
+        </div>
+        <div>
+          <p class="text-sm text-slate-800"><span class="font-semibold">Lisa Nguyen</span> uploaded revised cabinet layout drawing v3</p>
+          <p class="text-xs text-slate-400">Mar 10, 2026 &bull; 11:00 AM</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-emerald-600 text-sm">check_circle</span>
+        </div>
+        <div>
+          <p class="text-sm text-slate-800"><span class="font-semibold">David Kim</span> completed rough plumbing &mdash; all supply and drain lines installed</p>
+          <p class="text-xs text-slate-400">Mar 10, 2026 &bull; 3:30 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="bg-indigo-700 rounded-xl p-8 text-white shadow-sm">
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div>
+        <h3 class="text-lg font-bold mb-1">Have questions about your project?</h3>
+        <p class="text-indigo-200 text-sm">Reach out to your project manager, Carlos Rivera, anytime.</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="tel:+17145551234" class="bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2 transition">
+          <span class="material-symbols-outlined text-lg">call</span> (714) 555-1234
+        </a>
+        <a href="mailto:carlos@riveradesignbuild.com" class="bg-amber-500 hover:bg-amber-400 text-slate-900 px-5 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 transition">
+          <span class="material-symbols-outlined text-lg">mail</span> Send Message
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-slate-200 mt-12 py-8 px-6">
+  <div class="max-w-5xl mx-auto flex items-center justify-between text-xs text-slate-400">
+    <p>&copy; 2026 Rivera Design + Build. Powered by <a href="https://etitechnology.com" class="text-indigo-500 hover:text-indigo-600">ETI Technology</a></p>
+    <p>This is a shared project status link. <a href="login.html" class="text-indigo-500 hover:text-indigo-600">Log in</a> for full access.</p>
+  </div>
+</footer>
+
+</body>
+</html>
