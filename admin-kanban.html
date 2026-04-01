@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/ETI_icon.png"/>
+<link rel="apple-touch-icon" href="/ETI_icon.png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Board | Rivera Design + Build</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{indigo:{50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81'},amber:{50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#f59e0b',600:'#d97706',700:'#b45309',800:'#92400e',900:'#78350f'}},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+<style>.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400;display:inline-block;vertical-align:middle}.material-symbols-outlined.filled{font-variation-settings:'FILL' 1,'wght' 400}
+.kanban-card{background:white;border:1px solid #e2e8f0;border-radius:0.75rem;padding:1rem;cursor:grab;transition:box-shadow 0.15s, transform 0.15s}
+.kanban-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08);transform:translateY(-1px)}
+</style>
+</head>
+<body class="bg-slate-50 font-sans min-h-screen flex flex-col">
+
+<nav class="bg-indigo-700 text-white sticky top-0 z-50">
+  <div class="px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-4"><div class="flex items-center gap-2"><div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center"><span class="text-white font-bold text-sm">R</span></div><span class="font-bold text-sm">Rivera Design + Build</span><span class="text-indigo-200 text-xs ml-2 bg-white/10 px-2 py-0.5 rounded">Admin</span></div></div>
+    <div class="flex items-center gap-3">
+      <a href="./" class="text-xs text-indigo-200 hover:text-white flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Public View</a>
+      <div class="flex items-center gap-2 pl-3 border-l border-indigo-500"><div class="w-7 h-7 bg-amber-400 rounded-full flex items-center justify-center"><span class="text-xs font-bold text-slate-800">CR</span></div><span class="text-sm font-medium hidden sm:block">Carlos Rivera</span></div>
+    </div>
+  </div>
+</nav>
+
+<div class="flex flex-1">
+  <aside class="w-56 bg-white border-r border-slate-200 flex-shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto hidden md:block">
+    <div class="p-4 space-y-1">
+      <a href="admin-home" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">dashboard</span> Dashboard</a>
+      <a href="admin-projects" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">folder</span> Projects</a>
+      <a href="admin-project-detail" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">assignment</span> Project Detail</a>
+      <a href="admin-kanban" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-indigo-700 bg-indigo-50 rounded-lg"><span class="material-symbols-outlined text-lg">view_kanban</span> Task Board</a>
+      <a href="admin-resources" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">groups</span> Resources</a>
+      <a href="admin-templates" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">content_copy</span> Templates</a>
+      <a href="admin-analytics" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">analytics</span> Analytics</a>
+      <a href="admin-settings" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"><span class="material-symbols-outlined text-lg">settings</span> Settings</a>
+    </div>
+  </aside>
+
+  <main class="flex-1 p-6 lg:p-8 overflow-x-auto">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-900">Task Board</h1>
+        <p class="text-sm text-slate-500">Thompson Kitchen Remodel &bull; Drag tasks between columns</p>
+      </div>
+      <div class="flex gap-2">
+        <select class="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-600">
+          <option>Thompson Kitchen Remodel</option><option>Coastal Cafe Buildout</option><option>Winters ADU</option><option>Oceanview Office</option><option>All Projects</option>
+        </select>
+        <button class="bg-indigo-700 hover:bg-indigo-800 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5"><span class="material-symbols-outlined text-lg">add</span> Add Task</button>
+      </div>
+    </div>
+
+    <!-- Kanban Columns -->
+    <div class="flex gap-4 min-w-[900px] pb-4">
+      <!-- TO DO -->
+      <div class="flex-1 min-w-[220px]">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-slate-400 rounded-full"></span><h3 class="font-semibold text-sm text-slate-700">To Do</h3><span class="text-xs text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">3</span></div>
+          <span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer">add</span>
+        </div>
+        <div class="space-y-3">
+          <div class="kanban-card">
+            <p class="text-sm font-medium text-slate-800 mb-2">Countertop template measurement</p>
+            <p class="text-xs text-slate-500 mb-3">Schedule fabricator for template visit</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 28</span>
+              <div class="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-slate-500">?</span></div>
+            </div>
+          </div>
+          <div class="kanban-card">
+            <p class="text-sm font-medium text-slate-800 mb-2">Order backsplash tile</p>
+            <p class="text-xs text-slate-500 mb-3">White subway 3x6 from Daltile</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 29</span>
+              <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-slate-800">LN</span></div>
+            </div>
+          </div>
+          <div class="kanban-card">
+            <p class="text-sm font-medium text-slate-800 mb-2">Schedule final paint</p>
+            <p class="text-xs text-slate-500 mb-3">Coordinate with painter, walls + trim</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Apr 3</span>
+              <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-slate-800">LN</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IN PROGRESS -->
+      <div class="flex-1 min-w-[220px]">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-indigo-500 rounded-full"></span><h3 class="font-semibold text-sm text-slate-700">In Progress</h3><span class="text-xs text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">3</span></div>
+          <span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer">add</span>
+        </div>
+        <div class="space-y-3">
+          <div class="kanban-card border-l-4 border-l-indigo-500">
+            <div class="flex items-center justify-between mb-1"><span class="text-xs text-red-500 font-medium bg-red-50 px-1.5 py-0.5 rounded">High</span></div>
+            <p class="text-sm font-medium text-slate-800 mb-2">Cabinet installation</p>
+            <p class="text-xs text-slate-500 mb-3">Upper cabinets north wall in progress. Lower cabinets next.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 22 – 26</span>
+              <div class="w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">MJ</span></div>
+            </div>
+          </div>
+          <div class="kanban-card border-l-4 border-l-indigo-500">
+            <div class="flex items-center justify-between mb-1"><span class="text-xs text-amber-600 font-medium bg-amber-50 px-1.5 py-0.5 rounded">Medium</span></div>
+            <p class="text-sm font-medium text-slate-800 mb-2">Plumbing fixture rough-in</p>
+            <p class="text-xs text-slate-500 mb-3">Sink and dishwasher supply lines</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 23 – 26</span>
+              <div class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">DK</span></div>
+            </div>
+          </div>
+          <div class="kanban-card border-l-4 border-l-indigo-500">
+            <div class="flex items-center justify-between mb-1"><span class="text-xs text-amber-600 font-medium bg-amber-50 px-1.5 py-0.5 rounded">Medium</span></div>
+            <p class="text-sm font-medium text-slate-800 mb-2">Electrical panel update</p>
+            <p class="text-xs text-slate-500 mb-3">New dedicated circuits for appliances</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 23 – 25</span>
+              <div class="w-6 h-6 bg-amber-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-slate-800">CR</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEW -->
+      <div class="flex-1 min-w-[220px]">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-amber-500 rounded-full"></span><h3 class="font-semibold text-sm text-slate-700">Review</h3><span class="text-xs text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">2</span></div>
+        </div>
+        <div class="space-y-3">
+          <div class="kanban-card border-l-4 border-l-amber-500">
+            <p class="text-sm font-medium text-slate-800 mb-2">Tile layout approval</p>
+            <p class="text-xs text-slate-500 mb-3">Backsplash pattern needs client sign-off</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 27</span>
+              <div class="w-6 h-6 bg-pink-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">RT</span></div>
+            </div>
+          </div>
+          <div class="kanban-card border-l-4 border-l-amber-500">
+            <p class="text-sm font-medium text-slate-800 mb-2">Hardware selection sign-off</p>
+            <p class="text-xs text-slate-500 mb-3">Brushed nickel pulls &amp; knobs confirmation</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Mar 27</span>
+              <div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-slate-800">LN</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DONE -->
+      <div class="flex-1 min-w-[220px]">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-emerald-500 rounded-full"></span><h3 class="font-semibold text-sm text-slate-700">Done</h3><span class="text-xs text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">5</span></div>
+        </div>
+        <div class="space-y-3">
+          <div class="kanban-card opacity-70">
+            <p class="text-sm font-medium text-slate-700 mb-1 line-through">Demo complete</p>
+            <div class="flex items-center justify-between"><span class="text-xs text-slate-400">Mar 1</span><div class="w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">MJ</span></div></div>
+          </div>
+          <div class="kanban-card opacity-70">
+            <p class="text-sm font-medium text-slate-700 mb-1 line-through">Rough framing</p>
+            <div class="flex items-center justify-between"><span class="text-xs text-slate-400">Mar 5</span><div class="w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">MJ</span></div></div>
+          </div>
+          <div class="kanban-card opacity-70">
+            <p class="text-sm font-medium text-slate-700 mb-1 line-through">Permit application</p>
+            <div class="flex items-center justify-between"><span class="text-xs text-slate-400">Feb 18</span><div class="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-slate-800">LN</span></div></div>
+          </div>
+          <div class="kanban-card opacity-70">
+            <p class="text-sm font-medium text-slate-700 mb-1 line-through">Design drawings</p>
+            <div class="flex items-center justify-between"><span class="text-xs text-slate-400">Jan 25</span><div class="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">DK</span></div></div>
+          </div>
+          <div class="kanban-card opacity-70">
+            <p class="text-sm font-medium text-slate-700 mb-1 line-through">Flooring selection</p>
+            <div class="flex items-center justify-between"><span class="text-xs text-slate-400">Mar 8</span><div class="w-6 h-6 bg-pink-400 rounded-full flex items-center justify-center"><span class="text-[9px] font-bold text-white">RT</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

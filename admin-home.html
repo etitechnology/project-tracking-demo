@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/ETI_icon.png"/>
+<link rel="apple-touch-icon" href="/ETI_icon.png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | Rivera Design + Build</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config={theme:{extend:{colors:{indigo:{50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81'},amber:{50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#f59e0b',600:'#d97706',700:'#b45309',800:'#92400e',900:'#78350f'}},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}
+</script>
+<style>.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400;display:inline-block;vertical-align:middle}.material-symbols-outlined.filled{font-variation-settings:'FILL' 1,'wght' 400}</style>
+</head>
+<body class="bg-slate-50 font-sans min-h-screen flex flex-col">
+
+<!-- Admin Top Nav -->
+<nav class="bg-indigo-700 text-white sticky top-0 z-50">
+  <div class="px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center"><span class="text-white font-bold text-sm">R</span></div>
+        <span class="font-bold text-sm">Rivera Design + Build</span>
+        <span class="text-indigo-200 text-xs ml-2 bg-white/10 px-2 py-0.5 rounded">Admin</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="./" class="text-xs text-indigo-200 hover:text-white flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Public View</a>
+      <a href="portal-dashboard" class="text-xs text-indigo-200 hover:text-white flex items-center gap-1"><span class="material-symbols-outlined text-sm">person</span> Client Portal</a>
+      <button class="p-1.5 text-indigo-200 hover:text-white hover:bg-white/10 rounded-lg relative"><span class="material-symbols-outlined text-lg">notifications</span><span class="absolute top-0.5 right-0.5 w-2 h-2 bg-amber-400 rounded-full"></span></button>
+      <div class="flex items-center gap-2 pl-3 border-l border-indigo-500">
+        <div class="w-7 h-7 bg-amber-400 rounded-full flex items-center justify-center"><span class="text-xs font-bold text-slate-800">CR</span></div>
+        <span class="text-sm font-medium hidden sm:block">Carlos Rivera</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="flex flex-1">
+  <!-- Sidebar -->
+  <aside class="w-56 bg-white border-r border-slate-200 flex-shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto hidden md:block">
+    <div class="p-4 space-y-1">
+      <a href="admin-home" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-indigo-700 bg-indigo-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">dashboard</span> Dashboard
+      </a>
+      <a href="admin-projects" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">folder</span> Projects
+      </a>
+      <a href="admin-project-detail" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">assignment</span> Project Detail
+      </a>
+      <a href="admin-kanban" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">view_kanban</span> Task Board
+      </a>
+      <a href="admin-resources" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">groups</span> Resources
+      </a>
+      <a href="admin-templates" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">content_copy</span> Templates
+      </a>
+      <a href="admin-analytics" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">analytics</span> Analytics
+      </a>
+      <a href="admin-settings" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">
+        <span class="material-symbols-outlined text-lg">settings</span> Settings
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 lg:p-8 overflow-x-hidden">
+    <div class="max-w-7xl">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h1 class="text-2xl font-bold text-slate-900">Dashboard</h1>
+          <p class="text-slate-500 text-sm mt-1">Portfolio overview &bull; March 31, 2026</p>
+        </div>
+        <button class="bg-indigo-700 hover:bg-indigo-800 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-lg">add</span> New Project
+        </button>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <div class="flex items-center justify-between mb-2"><span class="material-symbols-outlined text-indigo-500">work</span><span class="text-xs text-emerald-600 font-medium bg-emerald-50 px-1.5 py-0.5 rounded">+2 this month</span></div>
+          <p class="text-2xl font-bold text-slate-900">8</p>
+          <p class="text-xs text-slate-500">Total Projects</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <div class="flex items-center justify-between mb-2"><span class="material-symbols-outlined text-amber-500">payments</span></div>
+          <p class="text-2xl font-bold text-slate-900">$863,000</p>
+          <p class="text-xs text-slate-500">Total Portfolio Value</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <div class="flex items-center justify-between mb-2"><span class="material-symbols-outlined text-emerald-500">trending_up</span></div>
+          <p class="text-2xl font-bold text-slate-900">$412,500</p>
+          <p class="text-xs text-slate-500">Revenue Collected</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <div class="flex items-center justify-between mb-2"><span class="material-symbols-outlined text-blue-500">speed</span></div>
+          <p class="text-2xl font-bold text-slate-900">72%</p>
+          <p class="text-xs text-slate-500">On-Time Delivery Rate</p>
+        </div>
+      </div>
+
+      <!-- Second Row KPIs -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <p class="text-xs text-slate-500 mb-1">Active Budget</p>
+          <p class="text-xl font-bold text-slate-900">$828,000</p>
+          <div class="flex items-center gap-1 mt-1"><span class="text-xs text-emerald-600">-3.2% avg variance</span></div>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <p class="text-xs text-slate-500 mb-1">Client Satisfaction</p>
+          <p class="text-xl font-bold text-slate-900">4.7 / 5.0</p>
+          <div class="flex items-center gap-0.5 mt-1">
+            <span class="material-symbols-outlined filled text-amber-400 text-sm">star</span>
+            <span class="material-symbols-outlined filled text-amber-400 text-sm">star</span>
+            <span class="material-symbols-outlined filled text-amber-400 text-sm">star</span>
+            <span class="material-symbols-outlined filled text-amber-400 text-sm">star</span>
+            <span class="material-symbols-outlined text-amber-400 text-sm">star_half</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <p class="text-xs text-slate-500 mb-1">Labor Rate</p>
+          <p class="text-xl font-bold text-slate-900">$65/hr</p>
+          <p class="text-xs text-slate-400 mt-1">Avg across all projects</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <p class="text-xs text-slate-500 mb-1">Completed This Month</p>
+          <p class="text-xl font-bold text-slate-900">2</p>
+          <p class="text-xs text-slate-400 mt-1">11 projects YTD</p>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6 mb-8">
+        <!-- Project Health Cards -->
+        <div class="lg:col-span-2">
+          <h2 class="font-bold text-slate-900 mb-4">Project Health Overview</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Thompson Kitchen</h4>
+                <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">On Track</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:72%"></div></div>
+              <p class="text-xs text-slate-500">72% &bull; Construction &bull; Apr 10</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Coastal Cafe Buildout</h4>
+                <span class="text-xs font-medium text-red-600 bg-red-50 px-2 py-0.5 rounded">At Risk</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-red-500 h-2 rounded-full" style="width:35%"></div></div>
+              <p class="text-xs text-slate-500">35% &bull; Permitting &bull; Aug 30</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Winters ADU</h4>
+                <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">On Track</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:20%"></div></div>
+              <p class="text-xs text-slate-500">20% &bull; Design &bull; Sep 15</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Oceanview Office</h4>
+                <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">On Track</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:58%"></div></div>
+              <p class="text-xs text-slate-500">58% &bull; Construction &bull; May 25</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Park Place Bathroom</h4>
+                <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">On Track</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-emerald-500 h-2 rounded-full" style="width:92%"></div></div>
+              <p class="text-xs text-slate-500">92% &bull; Punch List &bull; Mar 30</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Harbor Retail</h4>
+                <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded">Behind</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-amber-500 h-2 rounded-full" style="width:15%"></div></div>
+              <p class="text-xs text-slate-500">15% &bull; Pre-Construction &bull; Nov 30</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Martinez Addition</h4>
+                <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">On Track</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:65%"></div></div>
+              <p class="text-xs text-slate-500">65% &bull; Construction &bull; Jun 20</p>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-semibold text-slate-800 text-sm">Sunset Deck &amp; Patio</h4>
+                <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Completed</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2 mb-2"><div class="bg-emerald-500 h-2 rounded-full" style="width:100%"></div></div>
+              <p class="text-xs text-slate-500">100% &bull; Completed &bull; Feb 28</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts & Team -->
+        <div class="space-y-6">
+          <!-- Alerts -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-semibold text-slate-900 mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-amber-500 text-lg">warning</span> Alerts</h3>
+            <div class="space-y-3">
+              <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                <p class="text-sm font-medium text-red-800">Coastal Cafe &mdash; Permit Delay</p>
+                <p class="text-xs text-red-600 mt-0.5">City review taking longer than expected. Re-submit required.</p>
+              </div>
+              <div class="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <p class="text-sm font-medium text-amber-800">Harbor Retail &mdash; Behind Schedule</p>
+                <p class="text-xs text-amber-600 mt-0.5">Structural engineering review pending 2+ weeks.</p>
+              </div>
+              <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <p class="text-sm font-medium text-blue-800">Park Place Bathroom &mdash; Due Tomorrow</p>
+                <p class="text-xs text-blue-600 mt-0.5">Punch list items need final sign-off by Mar 30.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Utilization -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 class="font-semibold text-slate-900 mb-4">Team Utilization</h3>
+            <div class="space-y-3">
+              <div><div class="flex justify-between text-sm mb-1"><span class="text-slate-700">Carlos Rivera</span><span class="font-medium text-red-600">95%</span></div><div class="w-full bg-slate-100 rounded-full h-2"><div class="bg-red-500 h-2 rounded-full" style="width:95%"></div></div></div>
+              <div><div class="flex justify-between text-sm mb-1"><span class="text-slate-700">Mike Johnson</span><span class="font-medium text-red-600">98%</span></div><div class="w-full bg-slate-100 rounded-full h-2"><div class="bg-red-500 h-2 rounded-full" style="width:98%"></div></div></div>
+              <div><div class="flex justify-between text-sm mb-1"><span class="text-slate-700">David Kim</span><span class="font-medium text-amber-600">90%</span></div><div class="w-full bg-slate-100 rounded-full h-2"><div class="bg-amber-500 h-2 rounded-full" style="width:90%"></div></div></div>
+              <div><div class="flex justify-between text-sm mb-1"><span class="text-slate-700">Lisa Nguyen</span><span class="font-medium text-indigo-600">82%</span></div><div class="w-full bg-slate-100 rounded-full h-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:82%"></div></div></div>
+              <div><div class="flex justify-between text-sm mb-1"><span class="text-slate-700">Rachel Torres</span><span class="font-medium text-indigo-600">78%</span></div><div class="w-full bg-slate-100 rounded-full h-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:78%"></div></div></div>
+              <div><div class="flex justify-between text-sm mb-1"><span class="text-slate-700">Anna Petrov</span><span class="font-medium text-emerald-600">70%</span></div><div class="w-full bg-slate-100 rounded-full h-2"><div class="bg-emerald-500 h-2 rounded-full" style="width:70%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <h2 class="font-bold text-slate-900 mb-4">Recent Activity (All Projects)</h2>
+        <div class="space-y-3">
+          <div class="flex gap-3 items-start py-2"><div class="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-indigo-600 text-sm">build</span></div><div class="flex-1"><p class="text-sm text-slate-700"><strong>Mike Johnson</strong> &mdash; Thompson Kitchen: Cabinet installation started</p><p class="text-xs text-slate-400">Mar 22</p></div></div>
+          <div class="flex gap-3 items-start py-2"><div class="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-blue-600 text-sm">description</span></div><div class="flex-1"><p class="text-sm text-slate-700"><strong>Anna Petrov</strong> &mdash; Harbor Retail: Updated cost estimate to $210,000</p><p class="text-xs text-slate-400">Mar 21</p></div></div>
+          <div class="flex gap-3 items-start py-2"><div class="w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-amber-600 text-sm">warning</span></div><div class="flex-1"><p class="text-sm text-slate-700"><strong>Lisa Nguyen</strong> &mdash; Coastal Cafe: Permit re-submission required per city feedback</p><p class="text-xs text-slate-400">Mar 20</p></div></div>
+          <div class="flex gap-3 items-start py-2"><div class="w-7 h-7 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-emerald-600 text-sm">check_circle</span></div><div class="flex-1"><p class="text-sm text-slate-700"><strong>David Kim</strong> &mdash; Winters ADU: Design concept approved by Dr. Winters</p><p class="text-xs text-slate-400">Mar 19</p></div></div>
+          <div class="flex gap-3 items-start py-2"><div class="w-7 h-7 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-emerald-600 text-sm">verified</span></div><div class="flex-1"><p class="text-sm text-slate-700"><strong>Carlos Rivera</strong> &mdash; Martinez Addition: Framing inspection passed</p><p class="text-xs text-slate-400">Mar 18</p></div></div>
+          <div class="flex gap-3 items-start py-2"><div class="w-7 h-7 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-pink-600 text-sm">palette</span></div><div class="flex-1"><p class="text-sm text-slate-700"><strong>Rachel Torres</strong> &mdash; Park Place Bathroom: Final fixture selections confirmed</p><p class="text-xs text-slate-400">Mar 17</p></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
